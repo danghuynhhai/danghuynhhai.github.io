@@ -18,16 +18,16 @@
        $(document).ready(function () {
           $('#shareonfacebook').click(function (e) {
              e.preventDefault();
-             FB.ui(
-                {
-                   method: 'feed',
-                   name: 'DangPost',
-                   link: 'http://danghuynhhai.github.io',
-                   picture: 'http://www.highsalaryjobsindia.com/wp-content/uploads/2013/06/1166610385.jpg',
-                   caption: 'hjob salary',
-                   description: 'how about salary ?',
-                   message: 'this is my first post'
-                });
+             FB.ui({
+                 method: 'share_open_graph',
+                 action_type: 'og.likes',
+                 action_properties: JSON.stringify({
+                   object:'https://developers.facebook.com/docs/',
+                 })
+               }, function(response){
+                 // Debug response (optional)
+                 console.log(response);
+               });
              });
           });
       </script>
