@@ -33,8 +33,8 @@
                } 
              };
          
-             IN.API.Raw("/people/~/shares?format=json")
-               .method("POST")
+             IN.API.Raw("/people/~/current-status") // Update (PUT) the status
+               .method("PUT")
                .body(JSON.stringify(payload))
                .result(onSuccess)
                .error(onError);
