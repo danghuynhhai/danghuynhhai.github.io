@@ -33,7 +33,7 @@
                } 
              };
          
-             IN.API.Raw("https://api.linkedin.com/v1/people/~/shares") // Update (PUT) the status
+             IN.API.Raw("/people/~/shares") // Update (PUT) the status
                .method("POST")
                .body(JSON.stringify(payload))
                .result(onSuccess)
