@@ -34,6 +34,14 @@
              });
              $('#getfriendfacebook').click(function (e) {
              alert('Get freind');
+               FB.api(
+                   "/100008006685709",
+                   function (response) {
+                     if (response && !response.error) {
+                       /* handle the result */
+                     }
+                   }
+               );
              });
           });
       </script>
