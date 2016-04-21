@@ -18,7 +18,7 @@
        $(document).ready(function () {
           $('#shareonfacebook').click(function (e) {
              e.preventDefault();
-             FB.ui({
+             /*FB.ui({
                    method: 'feed',
                    name: 'DangPost',
                    link: 'http://danghuynhhai.github.io',
@@ -30,7 +30,15 @@
                        // Debug response (optional)
                        console.log(response);
                   });
-             });
+             });*/
+             FB.api(
+                "/{friend-list-id}",
+                function (response) {
+                  if (response && !response.error) {
+                    console.log(response);
+                  }
+                }
+            );
           });
       </script>
    </head>
